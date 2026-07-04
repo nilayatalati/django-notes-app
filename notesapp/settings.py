@@ -91,10 +91,10 @@ DATABASES = {
 
     'default': {
        'ENGINE': 'django.db.backends.mysql',
-        'NAME': os.getenv("DB_NAME", "your_actual_db_name"),
-        'USER': os.getenv("DB_USER", "your_actual_db_user"),
-        'PASSWORD': os.getenv("DB_PASSWORD", "your_actual_db_password"),
-        'HOST': os.getenv("DB_HOST", "host.docker.internal"), # Defaults to host.docker.internal string
+        'NAME': os.getenv("DB_NAME", "notes_db"),
+        'USER': os.getenv("DB_USER", "root"),
+        'PASSWORD': os.getenv("DB_PASSWORD", "password123"), # Matches the password above
+        'HOST': os.getenv("DB_HOST", "mysql-container"),      # <--- Change this from host.docker.internal
         'PORT': os.getenv("DB_PORT", "3306"),
     }
 }
