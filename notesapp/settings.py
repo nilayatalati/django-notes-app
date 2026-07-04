@@ -90,12 +90,12 @@ WSGI_APPLICATION = 'notesapp.wsgi.application'
 DATABASES = {
 
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': os.getenv("DB_NAME"),
-        'USER': os.getenv("DB_USER"),
-        'PASSWORD': os.getenv("DB_PASSWORD"),
-        'HOST': os.getenv("DB_HOST"),
-        'PORT': os.getenv("DB_PORT"),
+       'ENGINE': 'django.db.backends.mysql',
+        'NAME': os.getenv("DB_NAME", "your_actual_db_name"),
+        'USER': os.getenv("DB_USER", "your_actual_db_user"),
+        'PASSWORD': os.getenv("DB_PASSWORD", "your_actual_db_password"),
+        'HOST': os.getenv("DB_HOST", "host.docker.internal"), # Defaults to host.docker.internal string
+        'PORT': os.getenv("DB_PORT", "3306"),
     }
 }
 
